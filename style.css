@@ -1,14 +1,13 @@
 :root {
-  --ink: #0e0e10;
-  --ink-2: #1a1a1d;
+  --accent: #c8213a;
+  --accent-glow: rgba(200, 33, 58, 0.28);
+  --rose: #e8849a;
+  --rose-glow: rgba(232, 132, 154, 0.25);
+  --fb-blue: #1877f2;
   --paper: #f6f3ec;
-  --paper-2: #efeae0;
-  --line: rgba(255, 255, 255, 0.1);
-  --muted: rgba(255, 255, 255, 0.45);
-  --accent: oklch(0.55 0.22 25);
-  --accent-deep: oklch(0.42 0.2 25);
-  --gold: oklch(0.78 0.13 80);
-  --serif: "Bebas Neue", "Helvetica Neue", sans-serif;
+  --muted: rgba(246, 243, 236, 0.42);
+  --line: rgba(255, 255, 255, 0.07);
+  --script: "Dancing Script", cursive;
   --sans: "Inter", system-ui, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, monospace;
 }
@@ -19,72 +18,158 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   min-height: 100%;
 }
 
 body {
-  background: var(--ink);
+  background: #080608;
   color: var(--paper);
   font-family: var(--sans);
   font-size: 16px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
-/* ── Page shell ───────────────────────────────────────── */
+/* ── Smoke background ─────────────────────────────────────── */
+.lt-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: url("assets/img/bg/smoke.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.55;
+}
+
+.lt-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 90% 50% at 50% 0%,
+      rgba(180, 20, 50, 0.22) 0%,
+      transparent 60%
+    ),
+    linear-gradient(to bottom, rgba(8, 6, 8, 0.2) 0%, rgba(8, 6, 8, 0.6) 100%);
+}
+
+/* ── Page shell ───────────────────────────────────────────── */
 .lt-page {
+  position: relative;
+  z-index: 1;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 72px 24px 80px;
+  padding: 64px 24px 80px;
 }
 
-/* ── Header ───────────────────────────────────────────── */
+/* ── Header ───────────────────────────────────────────────── */
 .lt-header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  margin-bottom: 56px;
+  gap: 18px;
+  margin-bottom: 36px;
   text-align: center;
 }
 
+/* Logo — white badge, no inversion needed */
 .lt-logo {
-  width: 80px;
-  height: 80px;
+  width: 10em;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 14px;
 }
 
 .lt-logo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: invert(1) brightness(2);
 }
 
-.lt-title {
-  font-family: var(--serif);
-  font-size: clamp(52px, 10vw, 80px);
-  font-weight: 400;
-  line-height: 0.9;
-  letter-spacing: 0.02em;
-  color: var(--paper);
+/* Title block */
+.lt-title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.lt-title-main {
+  font-family: var(--sans);
+  font-size: clamp(34px, 8vw, 60px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  text-shadow: 0 2px 24px rgba(200, 33, 58, 0.18);
+}
+
+.lt-title-script {
+  font-family: var(--script);
+  font-size: clamp(19px, 5vw, 32px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--accent);
+  text-shadow: 0 0 24px var(--rose-glow);
+  letter-spacing: 0.01em;
 }
 
 .lt-subtitle {
   font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.2em;
+  font-size: 10px;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
 }
 
-/* ── Links container ──────────────────────────────────── */
+/* ── Action photo strip ───────────────────────────────────── */
+.lt-action-strip {
+  width: 100%;
+  max-width: 480px;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 28px;
+  position: relative;
+  box-shadow:
+    0 4px 32px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.lt-action-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: brightness(0.85) contrast(1.05);
+}
+
+.lt-action-strip::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, transparent 30%, rgba(8, 6, 8, 0.7) 100%),
+    linear-gradient(
+      to right,
+      rgba(8, 6, 8, 0.35) 0%,
+      transparent 30%,
+      transparent 70%,
+      rgba(8, 6, 8, 0.35) 100%
+    );
+  border-radius: 16px;
+}
+
+/* ── Links container ──────────────────────────────────────── */
 .lt-links {
   width: 100%;
   max-width: 480px;
@@ -93,102 +178,189 @@ body {
   gap: 10px;
 }
 
-/* ── Single link card ─────────────────────────────────── */
+/* ── Single link card ─────────────────────────────────────── */
 .lt-link {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 18px 24px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--line);
+  gap: 14px;
+  padding: 15px 18px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
   color: var(--paper);
   text-decoration: none;
-  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition:
+    background 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.22s ease;
   position: relative;
+  overflow: hidden;
 }
 
 .lt-link::before {
-  content: '';
+  content: "";
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--accent);
-  transform: scaleY(0);
-  transition: transform 0.2s;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 0.22s ease;
 }
 
 .lt-link:hover {
-  background: rgba(255, 255, 255, 0.09);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(200, 33, 58, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(200, 33, 58, 0.15),
+    0 0 20px var(--accent-glow),
+    0 8px 28px rgba(0, 0, 0, 0.35);
   transform: translateY(-2px);
 }
 
 .lt-link:hover::before {
-  transform: scaleY(1);
+  opacity: 1;
+}
+
+/* Icon box */
+.lt-link-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--muted);
+  transition:
+    color 0.22s,
+    background 0.22s,
+    border-color 0.22s;
+}
+
+.lt-link-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.lt-link:hover .lt-link-icon {
+  color: #fff;
+  background: rgba(200, 33, 58, 0.18);
+  border-color: rgba(200, 33, 58, 0.35);
+}
+
+/* Instagram — purple-pink glow on hover */
+.lt-link--instagram:hover {
+  border-color: rgba(200, 60, 160, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(200, 60, 160, 0.15),
+    0 0 20px rgba(200, 60, 160, 0.2),
+    0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+.lt-link--instagram:hover .lt-link-icon {
+  background: rgba(200, 39, 120, 0.2);
+  border-color: rgba(200, 39, 120, 0.4);
+}
+
+/* Facebook — blue glow on hover */
+.lt-link--facebook:hover {
+  border-color: rgba(24, 119, 242, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(24, 119, 242, 0.15),
+    0 0 20px rgba(24, 119, 242, 0.2),
+    0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+.lt-link--facebook:hover .lt-link-icon {
+  background: rgba(24, 119, 242, 0.2);
+  border-color: rgba(24, 119, 242, 0.4);
+  color: #fff;
 }
 
 .lt-link-inner {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
 }
 
 .lt-link-label {
   font-family: var(--mono);
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--muted);
 }
 
 .lt-link-name {
   font-family: var(--sans);
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
   color: var(--paper);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .lt-link-arrow {
   font-family: var(--mono);
-  font-size: 18px;
+  font-size: 15px;
   color: var(--muted);
-  transition: color 0.2s, transform 0.2s;
+  transition:
+    color 0.22s,
+    transform 0.22s;
   flex-shrink: 0;
 }
 
 .lt-link:hover .lt-link-arrow {
   color: var(--accent);
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 
-/* Event-Variante mit Accent-Border */
-.lt-link--event::before {
-  background: var(--accent);
-  transform: scaleY(1);
+/* Event variant — always has a subtle accent border */
+.lt-link--event {
+  border-color: rgba(200, 33, 58, 0.18);
 }
 
 .lt-link--event .lt-link-label {
-  color: var(--accent);
+  color: var(--rose);
 }
 
-/* ── Section divider ──────────────────────────────────── */
+.lt-link--event .lt-link-icon {
+  background: rgba(200, 33, 58, 0.1);
+  border-color: rgba(200, 33, 58, 0.2);
+  color: var(--rose);
+}
+
+/* ── Section divider ──────────────────────────────────────── */
 .lt-divider {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin: 8px 0 2px;
-  color: var(--muted);
+  gap: 12px;
+  margin: 6px 0 2px;
 }
 
 .lt-divider::before,
 .lt-divider::after {
-  content: '';
+  content: "";
   flex: 1;
   height: 1px;
-  background: var(--line);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(200, 33, 58, 0.35),
+    transparent
+  );
 }
 
 .lt-divider-label {
@@ -197,33 +369,38 @@ body {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   white-space: nowrap;
-  color: var(--accent);
+  color: var(--rose);
 }
 
-/* ── Footer ───────────────────────────────────────────── */
+/* ── Footer ───────────────────────────────────────────────── */
 .lt-footer {
-  margin-top: 64px;
+  margin-top: 60px;
   font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.18);
   text-align: center;
 }
 
-/* ── Responsive ───────────────────────────────────────── */
+/* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 480px) {
   .lt-page {
-    padding: 56px 20px 64px;
+    padding: 52px 16px 64px;
   }
 
   .lt-logo {
-    width: 64px;
-    height: 64px;
+    width: 76px;
+    height: 76px;
+    padding: 12px;
   }
 
   .lt-header {
-    gap: 16px;
-    margin-bottom: 44px;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .lt-action-strip {
+    height: 150px;
   }
 }
