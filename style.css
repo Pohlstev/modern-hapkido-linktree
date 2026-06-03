@@ -1,0 +1,229 @@
+:root {
+  --ink: #0e0e10;
+  --ink-2: #1a1a1d;
+  --paper: #f6f3ec;
+  --paper-2: #efeae0;
+  --line: rgba(255, 255, 255, 0.1);
+  --muted: rgba(255, 255, 255, 0.45);
+  --accent: oklch(0.55 0.22 25);
+  --accent-deep: oklch(0.42 0.2 25);
+  --gold: oklch(0.78 0.13 80);
+  --serif: "Bebas Neue", "Helvetica Neue", sans-serif;
+  --sans: "Inter", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ── Page shell ───────────────────────────────────────── */
+.lt-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 72px 24px 80px;
+}
+
+/* ── Header ───────────────────────────────────────────── */
+.lt-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 56px;
+  text-align: center;
+}
+
+.lt-logo {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lt-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: invert(1) brightness(2);
+}
+
+.lt-title {
+  font-family: var(--serif);
+  font-size: clamp(52px, 10vw, 80px);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: var(--paper);
+}
+
+.lt-subtitle {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ── Links container ──────────────────────────────────── */
+.lt-links {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── Single link card ─────────────────────────────────── */
+.lt-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line);
+  color: var(--paper);
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  position: relative;
+}
+
+.lt-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent);
+  transform: scaleY(0);
+  transition: transform 0.2s;
+}
+
+.lt-link:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.lt-link:hover::before {
+  transform: scaleY(1);
+}
+
+.lt-link-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.lt-link-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.lt-link-name {
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--paper);
+}
+
+.lt-link-arrow {
+  font-family: var(--mono);
+  font-size: 18px;
+  color: var(--muted);
+  transition: color 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+
+.lt-link:hover .lt-link-arrow {
+  color: var(--accent);
+  transform: translateX(3px);
+}
+
+/* Event-Variante mit Accent-Border */
+.lt-link--event::before {
+  background: var(--accent);
+  transform: scaleY(1);
+}
+
+.lt-link--event .lt-link-label {
+  color: var(--accent);
+}
+
+/* ── Section divider ──────────────────────────────────── */
+.lt-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 8px 0 2px;
+  color: var(--muted);
+}
+
+.lt-divider::before,
+.lt-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.lt-divider-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--accent);
+}
+
+/* ── Footer ───────────────────────────────────────────── */
+.lt-footer {
+  margin-top: 64px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 480px) {
+  .lt-page {
+    padding: 56px 20px 64px;
+  }
+
+  .lt-logo {
+    width: 64px;
+    height: 64px;
+  }
+
+  .lt-header {
+    gap: 16px;
+    margin-bottom: 44px;
+  }
+}
