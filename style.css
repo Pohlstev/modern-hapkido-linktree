@@ -135,7 +135,6 @@ body {
 .lt-action-strip {
   width: 100%;
   max-width: 480px;
-  height: 100%;
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 28px;
@@ -147,9 +146,8 @@ body {
 
 .lt-action-strip img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
+  height: auto;
+  display: block;
   filter: brightness(0.85) contrast(1.05);
 }
 
@@ -383,6 +381,122 @@ body {
   text-align: center;
 }
 
+/* ── Legal pages (Impressum / Datenschutz) ────────────────── */
+.lp-page {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+}
+
+.lp-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  margin-bottom: 40px;
+  transition: color 0.2s;
+}
+
+.lp-back:hover {
+  color: var(--accent);
+}
+
+.lp-title {
+  font-family: var(--sans);
+  font-size: clamp(28px, 6vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.lp-subtitle {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 48px;
+}
+
+.lp-section {
+  margin-bottom: 36px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.lp-section h2 {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.lp-section h3 {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(246, 243, 236, 0.7);
+  margin-top: 18px;
+  margin-bottom: 6px;
+}
+
+.lp-section p {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(246, 243, 236, 0.65);
+  margin-bottom: 10px;
+}
+
+.lp-section p:last-child {
+  margin-bottom: 0;
+}
+
+.lp-section a {
+  color: var(--rose);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.lp-section a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.lp-section address {
+  font-style: normal;
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.8;
+  color: rgba(246, 243, 236, 0.65);
+}
+
+.lp-footer {
+  margin-top: 48px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.15);
+  text-align: center;
+}
+
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 480px) {
   .lt-page {
@@ -400,7 +514,4 @@ body {
     margin-bottom: 28px;
   }
 
-  .lt-action-strip {
-    height: 150px;
-  }
 }
