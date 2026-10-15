@@ -84,7 +84,7 @@ button { font: inherit; color: inherit; }
 /* Kleine Ecktexte wie im Trailer */
 .hud {
   position: absolute; z-index: 7; pointer-events: none;
-  font-size: 0.66rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase;
+  font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase;
   color: rgba(237, 234, 228, 0.55); line-height: 1;
 }
 .hud--ol { left: 1rem; top: 1rem; } .hud--or { right: 1rem; top: 1rem; }
