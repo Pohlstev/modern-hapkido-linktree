@@ -2,207 +2,189 @@
 <html lang="de">
   <head>
     <meta charset="utf-8" />
-    <title>Modern Hapkido</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Modern Hapkido — Hanau &amp; Erlensee. Alle Kanäle auf einen Blick."
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Modern Hapkido · Alle Links</title>
+    <meta name="description" content="Modern Hapkido in Hanau und Erlensee: Vereinswebsite, Instagram, Facebook und die German Open Hapkido 2027 auf einen Blick." />
+    <meta name="theme-color" content="#060606" />
+    <meta name="color-scheme" content="dark" />
 
-    <meta property="og:title" content="Modern Hapkido" />
-    <meta
-      property="og:description"
-      content="Website, Instagram und German Open 2027 — alle Links."
-    />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="Modern Hapkido" />
+    <meta property="og:title" content="Modern Hapkido · Alle Links" />
+    <meta property="og:description" content="Website, Instagram, Facebook und German Open Hapkido 2027." />
+    <meta property="og:image" content="assets/img/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-    <link rel="stylesheet" href="fonts.css" />
+    <link rel="icon" href="assets/img/favicon.ico" sizes="any" />
+    <link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+
+    <link rel="preload" href="assets/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" as="image" type="image/webp" imagesrcset="assets/img/gruppe-s.webp 600w, assets/img/gruppe-l.webp 786w" imagesizes="(min-width: 40rem) 26rem, 80vw" fetchpriority="high" />
     <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SportsOrganization",
+        "name": "Modern Hapkido",
+        "sport": "Hapkido",
+        "url": "https://www.modern-hapkido.de/",
+        "email": "info@modern-hapkido.de",
+        "areaServed": ["Hanau", "Erlensee"],
+        "sameAs": [
+          "https://www.instagram.com/official.modern.hapkido/",
+          "https://www.facebook.com/ChunKiDoHapkido"
+        ]
+      }
+    </script>
   </head>
   <body>
-    <!-- Fixed smoke background -->
-    <div class="lt-bg" aria-hidden="true"></div>
+    <a class="sprung" href="#links">Zu den Links springen</a>
 
-    <div class="lt-page">
-      <!-- Header -->
-      <header class="lt-header">
-        <div class="lt-logo">
-          <img
-            src="assets/img/logo/Modern-Hapkido-Logo-Transparent-Black.png"
-            alt="Modern Hapkido Logo"
-          />
-        </div>
-        <div class="lt-title-block">
-          <h1 class="lt-title-main">Modern Hapkido</h1>
-          <p class="lt-title-script">Progressive Martial Arts</p>
-        </div>
-        <p class="lt-subtitle">Hapkido · Hanau &amp; Erlensee</p>
-      </header>
+    <!-- Bühne im Stil des Promo-Trailers: Korn, Ecktexte, Kino-Balken, Figur vor riesiger Schrift -->
+    <header class="lt-buehne korn">
+      <div class="lt-buehne__feld" aria-hidden="true"></div>
 
-      <!-- Action photo strip -->
-      <div class="lt-action-strip" aria-hidden="true">
-        <img src="assets/img/bg/gruppe.png" alt="" />
+      <p class="lt-riesenwort" aria-hidden="true">
+        <span style="--i: 0">H</span><span style="--i: 1">a</span><span style="--i: 2">p</span><span style="--i: 3">k</span><span style="--i: 4">i</span><span style="--i: 5">d</span><span style="--i: 6">o</span>
+      </p>
+
+      <div class="lt-figur">
+        <img
+          src="assets/img/gruppe-s.webp"
+          srcset="assets/img/gruppe-s.webp 600w, assets/img/gruppe-l.webp 786w"
+          sizes="(min-width: 40rem) 26rem, 80vw"
+          width="600"
+          height="617"
+          alt="Vier Trainerinnen und Trainer von Modern Hapkido im schwarzen Dobok in Kampfhaltung"
+          fetchpriority="high"
+        />
+      </div>
+      <span class="lt-boden" aria-hidden="true"></span>
+
+      <span class="lt-kino lt-kino--oben" aria-hidden="true"></span>
+      <span class="lt-kino lt-kino--unten" aria-hidden="true"></span>
+
+      <span class="hud hud--ol" aria-hidden="true">Modern Hapkido</span>
+      <span class="hud hud--or" aria-hidden="true">Hanau · Erlensee</span>
+      <span class="hud hud--ul" aria-hidden="true">TG Hanau · TSG Erlensee</span>
+      <span class="hud hud--ur" aria-hidden="true">Links</span>
+
+      <!-- Teilen: erscheint nur mit JavaScript -->
+      <button class="lt-teilen" type="button" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3M7 8l5-5 5 5M5 13v7h14v-7" /></svg>
+        <span class="lt-teilen__text">Teilen</span>
+      </button>
+    </header>
+
+    <main class="lt-spalte">
+      <div class="lt-kopf">
+        <img class="lt-logo" src="assets/img/logo/logo-192.webp" srcset="assets/img/logo/logo-192.webp 192w, assets/img/logo/logo-512.webp 512w" sizes="4.5rem" width="192" height="192" alt="" />
+        <h1 class="lt-titel">Modern Hapkido</h1>
+        <p class="lt-unterzeile">Hapkido in Hanau &amp; Erlensee</p>
       </div>
 
-      <!-- Links -->
-      <nav class="lt-links" aria-label="Links">
-        <a
-          class="lt-link"
-          href="https://www.modern-hapkido.de/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="lt-link-icon">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="12" cy="12" r="10" />
-              <path
-                d="M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20M2 12h20"
-              />
-            </svg>
-          </div>
-          <div class="lt-link-inner">
-            <span class="lt-link-label">Vereinswebsite</span>
-            <span class="lt-link-name">Official Website</span>
-          </div>
-          <span class="lt-link-arrow">→</span>
-        </a>
+      <nav id="links" aria-label="Kanäle von Modern Hapkido">
+        <ul class="lt-liste">
+          <li style="--i: 0">
+            <a class="lt-link" href="https://www.modern-hapkido.de/" target="_blank" rel="noopener">
+              <span class="lt-link__nr" aria-hidden="true">01</span>
+              <span class="lt-link__symbol" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" /><path d="M12 2.5a14 14 0 0 0 0 19M12 2.5a14 14 0 0 1 0 19M2.5 12h19" /></svg>
+              </span>
+              <span class="lt-link__text">
+                <span class="lt-link__label">Vereinswebsite</span>
+                <span class="lt-link__name">modern-hapkido.de</span>
+              </span>
+              <svg class="lt-link__pfeil" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+              <span class="sr-only">(öffnet in neuem Tab)</span>
+            </a>
+          </li>
+          <li style="--i: 1">
+            <a class="lt-link" href="https://www.instagram.com/official.modern.hapkido/" target="_blank" rel="noopener">
+              <span class="lt-link__nr" aria-hidden="true">02</span>
+              <span class="lt-link__symbol" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="5" /><circle cx="12" cy="12" r="4.4" /><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none" /></svg>
+              </span>
+              <span class="lt-link__text">
+                <span class="lt-link__label">Instagram</span>
+                <span class="lt-link__name">@official.modern.hapkido</span>
+              </span>
+              <svg class="lt-link__pfeil" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+              <span class="sr-only">(öffnet in neuem Tab)</span>
+            </a>
+          </li>
+          <li style="--i: 2">
+            <a class="lt-link" href="https://www.facebook.com/ChunKiDoHapkido" target="_blank" rel="noopener">
+              <span class="lt-link__nr" aria-hidden="true">03</span>
+              <span class="lt-link__symbol" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M15.5 3.5h-2.2c-2.4 0-4 1.6-4 4.1v2.6H7v3.3h2.3v7h3.4v-7h2.6l.5-3.3h-3.1V8.1c0-.9.4-1.4 1.4-1.4h1.4Z" /></svg>
+              </span>
+              <span class="lt-link__text">
+                <span class="lt-link__label">Facebook</span>
+                <span class="lt-link__name">Modern Hapkido</span>
+              </span>
+              <svg class="lt-link__pfeil" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+              <span class="sr-only">(öffnet in neuem Tab)</span>
+            </a>
+          </li>
+        </ul>
 
-        <a
-          class="lt-link lt-link--instagram"
-          href="https://www.instagram.com/official.modern.hapkido/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="lt-link-icon">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-              <circle cx="12" cy="12" r="4.5" />
-              <circle
-                cx="17.5"
-                cy="6.5"
-                r="1.2"
-                fill="currentColor"
-                stroke="none"
-              />
-            </svg>
+        <!-- German Open mit Taegeuk-Leuchtfeld und Glutfunken -->
+        <section class="lt-go" aria-labelledby="go-titel" data-glut>
+          <div class="lt-go__feld" aria-hidden="true"></div>
+          <div class="lt-go__kopf">
+            <h2 id="go-titel" class="lt-go__titel">German Open Hapkido</h2>
+            <p class="lt-go__datum">
+              <time datetime="2027-06-05">05–06</time>
+              <span>Juni 2027</span>
+            </p>
           </div>
-          <div class="lt-link-inner">
-            <span class="lt-link-label">Instagram</span>
-            <span class="lt-link-name">Instagram Modern Hapkido</span>
-          </div>
-          <span class="lt-link-arrow">→</span>
-        </a>
-
-        <a
-          class="lt-link lt-link--facebook"
-          href="https://www.facebook.com/ChunKiDoHapkido"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="lt-link-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
-              />
-            </svg>
-          </div>
-          <div class="lt-link-inner">
-            <span class="lt-link-label">Facebook</span>
-            <span class="lt-link-name">Facebook Modern Hapkido</span>
-          </div>
-          <span class="lt-link-arrow">→</span>
-        </a>
-
-        <!-- Event Section -->
-        <div class="lt-divider">
-          <span class="lt-divider-label">German Open Hapkido 2027</span>
-        </div>
-
-        <a
-          class="lt-link lt-link--event"
-          href="https://go-hapkido.de"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="lt-link-icon">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
-              <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
-              <path d="M4 22h16" />
-              <path
-                d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"
-              />
-              <path
-                d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"
-              />
-              <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
-            </svg>
-          </div>
-          <div class="lt-link-inner">
-            <span class="lt-link-label">Veranstaltung · 05–06 Juni 2027</span>
-            <span class="lt-link-name">Official German Open Hapkido 2027</span>
-          </div>
-          <span class="lt-link-arrow">→</span>
-        </a>
-
-        <a
-          class="lt-link lt-link--event"
-          href="https://sponsoring.go-hapkido.de"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="lt-link-icon">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
-          </div>
-          <div class="lt-link-inner">
-            <span class="lt-link-label">Sponsoring &amp; Partnerschaften</span>
-            <span class="lt-link-name">Partner werden</span>
-          </div>
-          <span class="lt-link-arrow">→</span>
-        </a>
+          <ul class="lt-liste">
+            <li style="--i: 3">
+              <a class="lt-link" href="https://go-hapkido.de" target="_blank" rel="noopener">
+                <span class="lt-link__nr" aria-hidden="true">04</span>
+                <span class="lt-link__symbol" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.7V17c0 .6-.5 1-1 1.2C7.9 18.8 7 20.2 7 22M14 14.7V17c0 .6.5 1 1 1.2 1.1.5 2 2 2 3.8M18 2H6v7a6 6 0 0 0 12 0V2Z" /></svg>
+                </span>
+                <span class="lt-link__text">
+                  <span class="lt-link__label">Turnier</span>
+                  <span class="lt-link__name">Offizielle Turnierseite</span>
+                </span>
+                <svg class="lt-link__pfeil" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+                <span class="sr-only">(öffnet in neuem Tab)</span>
+              </a>
+            </li>
+            <li style="--i: 4">
+              <a class="lt-link" href="https://sponsoring.go-hapkido.de" target="_blank" rel="noopener">
+                <span class="lt-link__nr" aria-hidden="true">05</span>
+                <span class="lt-link__symbol" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8" /><circle cx="9" cy="7" r="4" /></svg>
+                </span>
+                <span class="lt-link__text">
+                  <span class="lt-link__label">Sponsoring &amp; Partnerschaften</span>
+                  <span class="lt-link__name">Partner werden</span>
+                </span>
+                <svg class="lt-link__pfeil" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+                <span class="sr-only">(öffnet in neuem Tab)</span>
+              </a>
+            </li>
+          </ul>
+        </section>
       </nav>
+    </main>
 
-      <!-- Footer -->
-      <footer class="lt-footer">
-        <p>© 2026 Modern Hapkido · TG Hanau · TSG Erlensee</p>
-        <p style="margin-top:10px; display:flex; gap:18px; justify-content:center;">
-          <a href="impressum.html" style="color:inherit; text-decoration:none; opacity:0.7;">Impressum</a>
-          <a href="datenschutz.html" style="color:inherit; text-decoration:none; opacity:0.7;">Datenschutz</a>
-        </p>
-      </footer>
-    </div>
+    <footer class="lt-fuss lt-spalte">
+      <p>© 2026 Modern Hapkido · TG Hanau · TSG Erlensee</p>
+      <p class="lt-fuss__links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </p>
+    </footer>
   </body>
 </html>
